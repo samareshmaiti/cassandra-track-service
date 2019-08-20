@@ -28,7 +28,7 @@ public class TrackController {
         this.trackService = trackService1;
     }
 
-    @PostMapping("track")
+    @PostMapping("tracks")
     public ResponseEntity<?> saveTrack(@RequestBody Track track) throws TrackAlreadyExistsException {
         ResponseEntity responseEntity;
         trackService.saveTrack(track);
@@ -48,7 +48,7 @@ public class TrackController {
     }
 
     //Use GetMapping to get all the trackes in the datadase with details
-    @GetMapping("track")
+    @GetMapping("tracks")
     public ResponseEntity<?> getAllTrack() {
         return new ResponseEntity<>(trackService.getAllTracks(), HttpStatus.OK);
     }
